@@ -1,6 +1,37 @@
 <div class="container">
+
+    
     <h1>{{title}}</h1>
     <p>Os Vingadores (Avengers no original em inglês) são um grupo de super-heróis de história em quadrinhos publicados nos Estados Unidos pela editora Marvel Comics. O grupo também aparece em adaptações da Marvel para cinema, desenho animado e videogames. (Wikipedia)</p>
+
+    <br>
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Incluir Heroi</button>
+    
+    <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+                <h4 class="modal-title">Incluir Heroi</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form #formCadastro="ngForm" (ngSubmit)="cadastrar()">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="novo.nome_heroi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pessoa">Pessoa:</label>
+                        <input type="text" class="form-control" id="pessoa" name="pessoa" [(ngModel)]="novo.pessoa" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" [disabled]="!formCadastro.valid">Salvar</button>
+                        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+                    </div>
+                </form>
+            </div>
+        </ng-template>
+
     <p>Alguns membros da formação atual (clique para ver detalhes):</p>
     <div>
         <app-heroi *ngFor="let vingador of vingadores" [heroi]="vingador" [estahSelecionado]="selecionado && vingador.id == selecionado.id" (onSelecionado)="heroiSelecionado($event)"></app-heroi>
@@ -9,32 +40,5 @@
     <div *ngIf="selecionado">
         {{ selecionado | json }}
     </div>
-
-
-    <br>
-    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Incluir Heroi</button>
+    
 </div>
-<ng-template #content let-c="close" let-d="dismiss">
-    <div class="modal-header">
-        <h4 class="modal-title">Incluir Heroi</h4>
-        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <form #formCadastro="ngForm" (ngSubmit)="cadastrar()">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="novo.nome_heroi" required>
-            </div>
-            <div class="form-group">
-                <label for="pessoa">Pessoa:</label>
-                <input type="text" class="form-control" id="pessoa" name="pessoa" [(ngModel)]="novo.pessoa" required>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" [disabled]="!formCadastro.valid">Salvar</button>
-                <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
-            </div>
-        </form>
-    </div>
-</ng-template>
