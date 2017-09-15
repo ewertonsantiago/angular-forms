@@ -1,11 +1,11 @@
 export class Vingador {
     id: number;
-    nome: string;
+    nome_heroi: string;
     pessoa: string;
 
-    constructor(id: number, nome: string, pessoa?: string) {
+    constructor(id: number, nome_heroi: string, pessoa?: string) {
         this.id = id;
-        this.nome = nome;
+        this.nome_heroi = nome_heroi;
         this.pessoa = pessoa;
     }
 }
