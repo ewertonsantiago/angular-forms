@@ -16,7 +16,7 @@
 </div>
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
-        <h4 class="modal-title">Incluir Heroi</h4>
+        <h4 class="modal-title">Incluir Herói</h4>
         <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -24,12 +24,16 @@
     <div class="modal-body">
         <form #formCadastro="ngForm" (ngSubmit)="cadastrar()">
             <div class="form-group">
-                <label for="nome">Nome:</label>
+                <label for="nome">Nome do Herói:</label>
                 <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="novo.nome_heroi" required>
             </div>
             <div class="form-group">
-                <label for="pessoa">Pessoa:</label>
+                <label for="pessoa">Nome da Pessoa:</label>
                 <input type="text" class="form-control" id="pessoa" name="pessoa" [(ngModel)]="novo.pessoa" required>
+            </div>
+            <div class="form-group">
+                <label for="URL">URL da Imagem:</label>
+                <input type="image" class="form-control" id="URL" name="URL" [(ngModel)]="novo.URL" required>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary" [disabled]="!formCadastro.valid">Salvar</button>

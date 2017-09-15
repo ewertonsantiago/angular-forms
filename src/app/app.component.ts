@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
 
     cadastrar(): void {
         const novoId: number = this.vingadores.length + 1;
-        this.vingadores.push(new Vingador(novoId, this.novo.nome_heroi, this.novo.pessoa));
-        this.novo = new Vingador(0, '', '');
+        this.vingadores.push(new Vingador(novoId, this.novo.nome_heroi, this.novo.pessoa, this.novo.URL));
+        this.novo = new Vingador(0, '', '', '');
     }
 }
