@@ -54,7 +54,13 @@ export class AppComponent implements OnInit {
 
     cadastrar(): void {
         const novoId: number = this.vingadores.length + 1;
-        this.vingadores.push(new Vingador(novoId, this.novo.nome_heroi, this.novo.pessoa, this.novo.URL));
+        this.vingadores.push(new Vingador(novoId, this.novo.nome_heroi, this.novo.pessoa, this.novo.url));
         this.novo = new Vingador(0, '', '', '');
     }
+
+    excluir(): void{
+        var id : number = this.vingadores.indexOf(this.selecionado);
+        this.vingadores.splice(id, 1)
+    }
+
 }
