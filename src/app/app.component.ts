@@ -19,11 +19,12 @@ export class AppComponent implements OnInit {
     constructor(private modalService: NgbModal) {
         this.title = 'Vingadores';
         this.vingadores = [
-            new Vingador(1, 'Capitão América', 'Steve Rogers'),
-            new Vingador(2, 'Viúva Negra', 'Natasha Romanoff'),
-            new Vingador(3, 'Ms. Marvel', 'Carol Danvers'),
-            new Vingador(4, 'Deadpool', 'Wade Wilson'),
-            new Vingador(5, 'Gavião Arqueiro', 'Clint Barton')
+            new Vingador(1, 'Capitão América', 'Steve Rogers','https://upload.wikimedia.org/wikipedia/pt/b/bc/Steven_Rogers_%28Earth-616%29.jpg'),
+            new Vingador(2, 'Viúva Negra', 'Natasha Romanoff','https://upload.wikimedia.org/wikipedia/pt/1/1c/Black_Widow_Vol_6_12.jpg'),
+            new Vingador(3, 'Ms. Marvel', 'Carol Danvers','https://upload.wikimedia.org/wikipedia/pt/2/20/Captain_Marvel_Vol_9_3.jpg'),
+            new Vingador(4, 'Deadpool', 'Wade Wilson','https://upload.wikimedia.org/wikipedia/pt/c/ce/Deadpool_Vol_4_7.jpg'),
+            new Vingador(5, 'Gavião Arqueiro', 'Clint Barton','https://upload.wikimedia.org/wikipedia/pt/c/cc/Gavi%C3%A3o_Arqueiro_por_Clint_Langley.JPG'),
+            new Vingador(6, 'Dentes de Sabre', 'Victor Creed','https://upload.wikimedia.org/wikipedia/pt/b/bf/Dentes-de-Sabre_por_Robert_Atkins.jpg')
         ];
     }
 

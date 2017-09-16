@@ -6,8 +6,11 @@
         <app-heroi *ngFor="let vingador of vingadores" [heroi]="vingador" [estahSelecionado]="selecionado && vingador.id == selecionado.id" (onSelecionado)="heroiSelecionado($event)"></app-heroi>
     </div>
 
+    <!-- Se o heroi estiver selecionado aparecerá seus dados e imagem -->
     <div *ngIf="selecionado">
         {{ selecionado | json }}
+
+        <a [href]="imagem"><img [src]="selecionado.url" [height]="100"/></a>
         <button class="btn btn-default" ><i class="fa fa-pencil" aria-hidden="true"></i> </button>
         <button class="btn btn-default"  (click)="excluir()"><i class="fa fa-trash" aria-hidden="true"></i></button>                  
     </div>
